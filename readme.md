@@ -31,6 +31,10 @@ Stack navitation(transition between screens where each new screen is placed on t
 - `npx expo install react-native-gesture-handler` (Gesture recognizers and touch handling components)
 - `npx expo install react-native-reanimated` (Smooth and high-performance animations in your app)
 
+[Fonts](https://docs.expo.dev/versions/latest/sdk/font/) - ttf / otf
+
+- `npx expo install expo-font`
+
 Run command:
 
 - `npx expo start`

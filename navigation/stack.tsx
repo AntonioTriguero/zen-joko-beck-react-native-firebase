@@ -24,8 +24,8 @@ export const HomeStack = () => {
           headerTitleAlign: "center",
           headerTitleStyle: {
             fontWeight: "bold",
-            fontSize: 20,
-            fontFamily: "Cochin",
+            fontSize: 22,
+            fontFamily: "monospace",
           },
         }}
         component={HomeScreen}

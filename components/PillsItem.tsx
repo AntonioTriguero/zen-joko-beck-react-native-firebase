@@ -1,5 +1,5 @@
 import { Pills } from "./PillsList";
-import { TouchableOpacity, Image, StyleSheet, Text } from "react-native";
+import { TouchableOpacity, Image, StyleSheet, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const PillsItem = ({ id, title, text, photo, category, source }: Pills) => {
@@ -19,27 +19,43 @@ const PillsItem = ({ id, title, text, photo, category, source }: Pills) => {
         })
       }
     >
-      <Text>{title}</Text>
       <Image
         style={styles.img}
         source={{ uri: photo ? photo : "https://via.placeholder.com/150" }}
       />
+      <Text style={styles.title}>"{title}"</Text>
+      <View style={styles.button}>
+        <Text style={{ color: "#000" }}>Read now</Text>
+      </View>
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: "#fff",
-    padding: 10,
-    borderRadius: 10,
-    marginBottom: 10,
+    backgroundColor: "#eeeeee",
+    padding: 20,
+    alignItems: "center",
   },
   img: {
-    width: "100%",
+    width: 200,
     height: 200,
     resizeMode: "cover",
-    borderRadius: 10,
+  },
+  title: {
+    fontSize: 15,
+    fontWeight: "bold",
+    marginTop: 10,
+    textAlign: "center",
+  },
+  button: {
+    borderColor: "#000000",
+    borderWidth: 1,
+    paddingVertical: 5,
+    paddingHorizontal: 12,
+    alignItems: "center",
+    width: "50%",
+    marginTop: 10,
   },
 });
 

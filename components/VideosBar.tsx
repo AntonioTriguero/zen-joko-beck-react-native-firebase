@@ -1,8 +1,8 @@
 import { View, StyleSheet, Text } from "react-native";
-import PillsList from "./PillsList";
-import { Ionicons } from "@expo/vector-icons";
 
-const PillsBar = () => {
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
+const VideosBar = () => {
   return (
     <>
       <View style={styles.pillsBox}>
@@ -13,11 +13,11 @@ const PillsBar = () => {
             marginBottom: 10,
           }}
         >
-          <Ionicons
-            name="book"
-            size={24}
+          <MaterialCommunityIcons
+            name="video-vintage"
+            size={28}
             color="#eeeeee"
-            style={{ marginRight: 10, paddingTop: 3 }}
+            style={{ marginRight: 10, paddingBottom: 3 }}
           />
           <Text
             style={{
@@ -27,12 +27,10 @@ const PillsBar = () => {
               fontFamily: "monospace",
             }}
           >
-            Zen Pills
+            Zen Talks
           </Text>
         </View>
-        {/*<PillsList />*/}
-
-        <PillsList />
+        {/*<Videos />*/}
       </View>
     </>
   );
@@ -49,4 +47,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PillsBar;
+export default VideosBar;

@@ -3,20 +3,33 @@ import SearchBar from "../components/SearchBar";
 import Categories from "../components/Categories";
 import PillsBar from "../components/PillsBar";
 import BarSeparator from "../components/BarSeparator";
+import VideosBar from "../components/VideosBar";
 
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      {/*SEARCH BAR - substitue it by a button that looks identical and goes to the search bar screen*/}
+      {/*Search bar - substitue it by a button that looks identical and goes to the search bar screen*/}
       <SearchBar />
-      {/*CATEGORIES*/}
+
+      {/*Categories bar*/}
+
       <Categories />
+
       {/*<Bar Separator />*/}
 
       <BarSeparator />
-      {/*PILLS BAR*/}
+
+      {/*Pills bar*/}
 
       <PillsBar />
+
+      {/*<Bar Separator />*/}
+
+      <BarSeparator />
+
+      {/*Video bar*/}
+
+      <VideosBar />
     </View>
   );
 };
