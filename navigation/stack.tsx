@@ -6,7 +6,7 @@ import FalseFearsScreen from "../screens/categories/FalseFearsScreen";
 import BoundariesScreen from "../screens/categories/BoundariesScreen";
 import RelationshipsScreen from "../screens/categories/RelationshipsScreen";
 import HomeScreen from "../screens/HomeScreen";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import PillsScreen from "../screens/PillsScreen";
 
 const Stack = createStackNavigator();
 
@@ -20,28 +20,13 @@ export const HomeStack = () => {
           headerStyle: {
             backgroundColor: "#000000",
           },
-          headerTintColor: "white",
+          headerTintColor: "#eeeeee",
           headerTitleAlign: "center",
           headerTitleStyle: {
             fontWeight: "bold",
             fontSize: 20,
+            fontFamily: "Cochin",
           },
-          headerRight: () => (
-            <MaterialCommunityIcons
-              name="flower"
-              size={24}
-              color="#1b5a67"
-              style={{ paddingRight: 20, marginRight: 20 }}
-            />
-          ),
-          headerLeft: () => (
-            <MaterialCommunityIcons
-              name="flower"
-              size={24}
-              color="#1b5a67"
-              style={{ paddingLeft: 20, marginLeft: 20 }}
-            />
-          ),
         }}
         component={HomeScreen}
       />
@@ -56,6 +41,7 @@ export const HomeStack = () => {
         name="RelationshipsScreen"
         component={RelationshipsScreen}
       />
+      <Stack.Screen name="PillsScreen" component={PillsScreen} />
     </Stack.Navigator>
   );
 };

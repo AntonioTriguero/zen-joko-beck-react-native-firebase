@@ -1,4 +1,8 @@
-# Joko Beck Zen Teachings - React Native App
+# Joko Beck Zen Teachings 🌸 - React Native App
+
+A beautiful app that lets you read excerpts of her teachings, all organized by categories. You also have her video teachings all in the same place. The purpose is to offer an application that quickly inspires you to keep Beck's 'Nothing Speacial' powerful Zen way.
+
+⚠ in Progress ⚠
 
 ## Installation:
 

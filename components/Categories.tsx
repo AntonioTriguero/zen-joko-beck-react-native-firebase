@@ -37,7 +37,7 @@ const Categories = () => {
       <View
         style={[styles.categoryBox, index === 0 && styles.firstCategoryBox]}
       >
-        <Text style={{ color: "white" }}>{item} </Text>
+        <Text style={{ color: "#eeeeee" }}>{item} </Text>
       </View>
     </TouchableOpacity>
   );
@@ -57,14 +57,15 @@ const Categories = () => {
 const styles = StyleSheet.create({
   categoriesContainer: {
     backgroundColor: "#000000",
-    padding: 10,
+    padding: 20,
     flexDirection: "row",
     gap: 10,
   },
   categoryBox: {
     backgroundColor: "#000000",
-    padding: 10,
-    borderColor: "#ffffff",
+    paddingVertical: 5,
+    paddingHorizontal: 12,
+    borderColor: "#eeeeee",
     borderWidth: 1,
     marginRight: 10,
   },

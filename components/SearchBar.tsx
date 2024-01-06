@@ -21,7 +21,7 @@ const SearchBar = () => {
           <TextInput
             style={styles.input}
             placeholder="Search Bar"
-            placeholderTextColor="white"
+            placeholderTextColor="#eeeeee"
 
             // value={title}
             // onChangeText={setTitle}
@@ -34,19 +34,19 @@ const SearchBar = () => {
 
 const styles = StyleSheet.create({
   inputBox: {
-    backgroundColor: "#5b5b5b",
+    backgroundColor: "#242424",
     padding: 10,
     flexDirection: "row",
   },
   searchBox: {
     backgroundColor: "#000000",
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
     paddingTop: 10,
     paddingBottom: 1,
     justifyContent: "center",
   },
   input: {
-    color: "white",
+    color: "#eeeeee",
   },
 });
 

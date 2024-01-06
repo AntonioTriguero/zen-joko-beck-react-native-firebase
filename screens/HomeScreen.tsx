@@ -1,6 +1,8 @@
 import { View, StyleSheet, Text } from "react-native";
 import SearchBar from "../components/SearchBar";
 import Categories from "../components/Categories";
+import PillsBar from "../components/PillsBar";
+import BarSeparator from "../components/BarSeparator";
 
 const HomeScreen = () => {
   return (
@@ -9,6 +11,12 @@ const HomeScreen = () => {
       <SearchBar />
       {/*CATEGORIES*/}
       <Categories />
+      {/*<Bar Separator />*/}
+
+      <BarSeparator />
+      {/*PILLS BAR*/}
+
+      <PillsBar />
     </View>
   );
 };
