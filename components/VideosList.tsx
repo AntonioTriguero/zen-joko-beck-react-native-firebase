@@ -1,6 +1,6 @@
 import { View, FlatList, RefreshControl } from "react-native";
 
-import VideoItem from "./VideoItem";
+import VideosItem from "./VideosItem";
 
 const videoIds: string[] = [
   "ojR0IMhXef0",
@@ -11,7 +11,7 @@ const videoIds: string[] = [
 
 const PillsList = () => {
   const renderItem = ({ item }: { item: string }) => {
-    return <VideoItem videoId={item} />;
+    return <VideosItem videoId={item} />;
   };
   return (
     <View>

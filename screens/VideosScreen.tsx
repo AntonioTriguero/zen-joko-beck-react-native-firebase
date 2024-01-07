@@ -1,10 +1,10 @@
-import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import VideosList from "./VideosList";
+import VideosList from "../components/VideosList";
 import { useNavigation } from "@react-navigation/native";
 
-const VideosBar = () => {
+const VideosScreen = () => {
   const navigation = useNavigation<any>();
   return (
     <>
@@ -13,14 +13,13 @@ const VideosBar = () => {
 
         {/*LEFT SIDE*/}
 
-        <TouchableOpacity
+        <View
           style={{
             flexDirection: "row",
             alignItems: "center",
             marginBottom: 10,
             justifyContent: "space-between",
           }}
-          onPress={() => navigation.navigate("VideosScreen")}
         >
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <MaterialCommunityIcons
@@ -43,12 +42,13 @@ const VideosBar = () => {
           {/*RIGHT SIDE*/}
 
           <AntDesign
-            name="right"
+            name="doubleright"
             size={24}
             color="#eeeeee"
             style={{ marginRight: 10 }}
+            onPress={() => navigation.navigate("AllPillsScreen")}
           />
-        </TouchableOpacity>
+        </View>
         {/*<Videos />*/}
         <VideosList />
       </View>
@@ -69,4 +69,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default VideosBar;
+export default VideosScreen;

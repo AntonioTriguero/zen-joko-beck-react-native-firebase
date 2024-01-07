@@ -25,7 +25,7 @@ const PillsItem = ({ id, title, text, photo, category, source }: Pills) => {
       />
       <Text style={styles.title}>"{title}"</Text>
       <View style={styles.button}>
-        <Text style={{ color: "#000" }}>Read now</Text>
+        <Text style={{ color: "#000", fontSize: 12 }}>Read now</Text>
       </View>
     </TouchableOpacity>
   );
@@ -36,17 +36,23 @@ const styles = StyleSheet.create({
     backgroundColor: "#eeeeee",
     padding: 20,
     alignItems: "center",
+    maxWidth: 225,
+    minWidth: 225,
+    Height: 300,
+    marginRight: 10,
   },
   img: {
-    width: 200,
-    height: 200,
+    width: 170,
+    height: 130,
     resizeMode: "cover",
   },
   title: {
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: "bold",
     marginTop: 10,
     textAlign: "center",
+    flexWrap: "wrap",
+    overflow: "visible",
   },
   button: {
     borderColor: "#000000",

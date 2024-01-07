@@ -1,11 +1,9 @@
-import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
+import PillsList from "../components/PillsList";
+import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import VideosList from "./VideosList";
-import { useNavigation } from "@react-navigation/native";
 
-const VideosBar = () => {
-  const navigation = useNavigation<any>();
+const AllPillsScreen = () => {
   return (
     <>
       <View style={styles.pillsBox}>
@@ -13,21 +11,20 @@ const VideosBar = () => {
 
         {/*LEFT SIDE*/}
 
-        <TouchableOpacity
+        <View
           style={{
             flexDirection: "row",
             alignItems: "center",
             marginBottom: 10,
             justifyContent: "space-between",
           }}
-          onPress={() => navigation.navigate("VideosScreen")}
         >
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <MaterialCommunityIcons
-              name="video-vintage"
-              size={28}
+            <Ionicons
+              name="book"
+              size={24}
               color="#eeeeee"
-              style={{ marginRight: 10, paddingBottom: 3 }}
+              style={{ marginRight: 10, paddingTop: 3 }}
             />
             <Text
               style={{
@@ -37,20 +34,22 @@ const VideosBar = () => {
                 fontFamily: "monospace",
               }}
             >
-              Zen Talks
+              Zen Pills
             </Text>
           </View>
           {/*RIGHT SIDE*/}
 
           <AntDesign
-            name="right"
+            name="doubleright"
             size={24}
             color="#eeeeee"
             style={{ marginRight: 10 }}
           />
-        </TouchableOpacity>
-        {/*<Videos />*/}
-        <VideosList />
+        </View>
+
+        {/*<PillsList />*/}
+
+        <PillsList />
       </View>
     </>
   );
@@ -59,9 +58,7 @@ const VideosBar = () => {
 const styles = StyleSheet.create({
   pillsBox: {
     backgroundColor: "#000000",
-    paddingHorizontal: 20,
-    paddingBottom: 20,
-    paddingTop: 10,
+    padding: 20,
     justifyContent: "center",
     borderWidth: 0,
     borderColor: "transparent",
@@ -69,4 +66,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default VideosBar;
+export default AllPillsScreen;

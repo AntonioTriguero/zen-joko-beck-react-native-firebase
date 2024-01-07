@@ -24,7 +24,7 @@ const VideosItem = ({ videoId }: { videoId: string }) => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <View style={styles.card}>
       <YoutubePlayer
         height={100}
         play={playing}
@@ -34,7 +34,9 @@ const VideosItem = ({ videoId }: { videoId: string }) => {
       />
       <View>
         <TouchableOpacity style={styles.button} onPress={togglePlaying}>
-          <Text style={{ color: "#eeeeee" }}>{playing ? "pause" : "play"}</Text>
+          <Text style={{ color: "#000", fontSize: 12 }}>
+            {playing ? "Pause" : "Play"}
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -42,15 +44,20 @@ const VideosItem = ({ videoId }: { videoId: string }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  card: {
+    backgroundColor: "#eeeeee",
+    padding: 20,
     alignItems: "center",
-    // marginTop: -100,
+    maxWidth: 225,
+    minWidth: 225,
+    Height: 300,
+    marginRight: 10,
   },
   button: {
-    borderColor: "#eeeeee",
+    borderColor: "#000",
     borderWidth: 1,
     paddingVertical: 5,
-    paddingHorizontal: 12,
+    paddingHorizontal: 15,
     alignItems: "center",
     width: "50%",
     marginTop: 10,

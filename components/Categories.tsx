@@ -57,7 +57,9 @@ const Categories = () => {
 const styles = StyleSheet.create({
   categoriesContainer: {
     backgroundColor: "#000000",
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingTop: 10,
+    paddingBottom: 15,
     flexDirection: "row",
     gap: 10,
   },

@@ -7,6 +7,8 @@ import BoundariesScreen from "../screens/categories/BoundariesScreen";
 import RelationshipsScreen from "../screens/categories/RelationshipsScreen";
 import HomeScreen from "../screens/HomeScreen";
 import PillsScreen from "../screens/PillsScreen";
+import AllPillsScreen from "../screens/AllPillsScreen";
+import VideosScreen from "../screens/VideosScreen";
 
 const Stack = createStackNavigator();
 
@@ -42,6 +44,8 @@ export const HomeStack = () => {
         component={RelationshipsScreen}
       />
       <Stack.Screen name="PillsScreen" component={PillsScreen} />
+      <Stack.Screen name="AllPillsScreen" component={AllPillsScreen} />
+      <Stack.Screen name="VideosScreen" component={VideosScreen} />
     </Stack.Navigator>
   );
 };

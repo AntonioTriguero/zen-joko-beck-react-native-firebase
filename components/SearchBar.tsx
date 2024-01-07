@@ -35,14 +35,14 @@ const SearchBar = () => {
 const styles = StyleSheet.create({
   inputBox: {
     backgroundColor: "#242424",
-    padding: 10,
+    padding: 5,
     flexDirection: "row",
   },
   searchBox: {
     backgroundColor: "#000000",
     paddingHorizontal: 20,
-    paddingTop: 10,
-    paddingBottom: 1,
+    paddingTop: 5,
+    paddingBottom: 5,
     justifyContent: "center",
   },
   input: {
