@@ -31,6 +31,11 @@ Stack navitation(transition between screens where each new screen is placed on t
 - `npx expo install react-native-gesture-handler` (Gesture recognizers and touch handling components)
 - `npx expo install react-native-reanimated` (Smooth and high-performance animations in your app)
 
+Youtube videos rendering [library](https://lonelycpp.github.io/react-native-youtube-iframe/install):
+
+- `npm install react-native-webview`
+- `npm install react-native-youtube-iframe`
+
 [Fonts](https://docs.expo.dev/versions/latest/sdk/font/) - ttf / otf
 
 - `npx expo install expo-font`

@@ -1,6 +1,7 @@
 import { View, StyleSheet, Text } from "react-native";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import VideosList from "./VideosList";
 
 const VideosBar = () => {
   return (
@@ -31,6 +32,7 @@ const VideosBar = () => {
           </Text>
         </View>
         {/*<Videos />*/}
+        <VideosList />
       </View>
     </>
   );

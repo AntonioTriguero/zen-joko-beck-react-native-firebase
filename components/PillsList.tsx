@@ -67,7 +67,7 @@ const PillsList = () => {
         data={pills}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
-        numColumns={2}
+        horizontal
         // refreshControl={<RefreshControl refreshing={false} onRefresh={() => fetchData()} />}
       />
     </View>
