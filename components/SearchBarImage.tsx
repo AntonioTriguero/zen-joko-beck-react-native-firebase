@@ -1,16 +1,23 @@
 import {
   View,
   StyleSheet,
-  ImageBackground,
+  TouchableOpacity,
   TextInput,
   Text,
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
-const SearchBar = () => {
+const SearchBarImage = () => {
+  const navigation = useNavigation<any>();
   return (
     <>
-      <View style={styles.searchBox}>
+      <TouchableOpacity
+        style={styles.searchBox}
+        onPress={() => {
+          navigation.navigate("SearchScreen");
+        }}
+      >
         <View style={styles.inputBox}>
           <Feather
             name="search"
@@ -18,16 +25,9 @@ const SearchBar = () => {
             color="white"
             style={{ marginRight: 10, paddingTop: 3 }}
           />
-          <TextInput
-            style={styles.input}
-            placeholder="Search Bar"
-            placeholderTextColor="#eeeeee"
-
-            // value={title}
-            // onChangeText={setTitle}
-          />
+          <Text style={styles.input}>Search Topic</Text>
         </View>
-      </View>
+      </TouchableOpacity>
     </>
   );
 };
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SearchBar;
+export default SearchBarImage;

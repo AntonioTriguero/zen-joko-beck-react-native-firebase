@@ -1,8 +1,8 @@
-import { Pills } from "./PillsList";
+import { Pill } from "./PillsList";
 import { TouchableOpacity, Image, StyleSheet, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-const PillsItem = ({ id, title, text, photo, category, source }: Pills) => {
+const PillsItem = ({ id, title, text, photo, category, source }: Pill) => {
   const navigation = useNavigation<any>();
 
   return (

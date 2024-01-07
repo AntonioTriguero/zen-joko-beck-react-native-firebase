@@ -4,7 +4,7 @@ A beautiful app that lets you read excerpts of her teachings, all organized by c
 
 Layout inspired on Kindle's mobile app and its `horizontal carousels`:
 
-![1704640112942](https://github.com/vanesascode/zen-joko-beck-react-native-frontend/assets/131259155/f47c0509-29c1-4fcd-b276-f07aad24d88c)
+![Captura](https://github.com/vanesascode/zen-joko-beck-react-native-frontend/assets/131259155/650144fe-4a46-4944-befc-4735798ed772)
 
 In Progress ⚠
 

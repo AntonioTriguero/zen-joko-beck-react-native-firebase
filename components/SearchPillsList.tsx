@@ -1,6 +1,6 @@
 import { View, FlatList, RefreshControl } from "react-native";
 import PillsItem from "./PillsItem";
-import { pills } from "../data/pillsData";
+// import { useState, useEffect } from "react";
 
 export interface Pill {
   id: string;
@@ -11,7 +11,11 @@ export interface Pill {
   source: string;
 }
 
-const PillsList = () => {
+interface Props {
+  pills: Pill[];
+}
+
+const SearchPillsList = ({ pills }: Props) => {
   const renderItem = ({ item }: { item: Pill }) => {
     return (
       <PillsItem
@@ -30,11 +34,11 @@ const PillsList = () => {
         data={pills}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
-        horizontal
+
         // refreshControl={<RefreshControl refreshing={false} onRefresh={() => fetchData()} />}
       />
     </View>
   );
 };
 
-export default PillsList;
+export default SearchPillsList;

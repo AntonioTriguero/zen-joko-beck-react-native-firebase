@@ -1,5 +1,5 @@
 import { View, StyleSheet, Linking, Text } from "react-native";
-import SearchBar from "../components/SearchBar";
+import SearchBarImage from "../components/SearchBarImage";
 import Categories from "../components/Categories";
 import PillsBar from "../components/PillsBar";
 import BarSeparator from "../components/BarSeparator";
@@ -9,14 +9,15 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      {/*Search bar - substitue it by a button that looks identical and goes to the search bar screen*/}
-      <SearchBar />
+      {/*Search bar Image to click and go the search screen*/}
+
+      <SearchBarImage />
 
       {/*Categories bar*/}
 
       <Categories />
 
-      {/*<Bar Separator />*/}
+      {/*<Grey Bar Separator />*/}
 
       <BarSeparator />
 
@@ -24,7 +25,7 @@ const HomeScreen = () => {
 
       <PillsBar />
 
-      {/*<Bar Separator />*/}
+      {/*<Grey Bar Separator />*/}
 
       <BarSeparator />
 
@@ -32,7 +33,7 @@ const HomeScreen = () => {
 
       <VideosBar />
 
-      {/*<Bar Separator />*/}
+      {/*<Grey Bar Separator />*/}
 
       <BarSeparator />
 

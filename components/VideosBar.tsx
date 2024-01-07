@@ -25,7 +25,7 @@ const VideosBar = () => {
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <MaterialCommunityIcons
               name="video-vintage"
-              size={28}
+              size={24}
               color="#eeeeee"
               style={{ marginRight: 10, paddingBottom: 3 }}
             />
@@ -33,7 +33,7 @@ const VideosBar = () => {
               style={{
                 color: "#eeeeee",
                 fontWeight: "bold",
-                fontSize: 20,
+                fontSize: 18,
                 fontFamily: "monospace",
               }}
             >
@@ -44,7 +44,7 @@ const VideosBar = () => {
 
           <AntDesign
             name="right"
-            size={24}
+            size={20}
             color="#eeeeee"
             style={{ marginRight: 10 }}
           />

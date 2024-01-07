@@ -25,7 +25,7 @@ const PillsBar = () => {
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Ionicons
               name="book"
-              size={24}
+              size={20}
               color="#eeeeee"
               style={{ marginRight: 10, paddingTop: 3 }}
             />
@@ -33,7 +33,7 @@ const PillsBar = () => {
               style={{
                 color: "#eeeeee",
                 fontWeight: "bold",
-                fontSize: 20,
+                fontSize: 18,
                 fontFamily: "monospace",
               }}
             >
@@ -44,7 +44,7 @@ const PillsBar = () => {
 
           <AntDesign
             name="right"
-            size={24}
+            size={20}
             color="#eeeeee"
             style={{ marginRight: 10 }}
           />
