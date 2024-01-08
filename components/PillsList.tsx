@@ -1,6 +1,14 @@
-import { View, FlatList, RefreshControl } from "react-native";
+import {
+  View,
+  FlatList,
+  RefreshControl,
+  ActivityIndicator,
+  StyleSheet,
+  Text,
+} from "react-native";
 import PillsItem from "./PillsItem";
 import { pills } from "../data/pillsData";
+import { useState, useEffect } from "react";
 
 export interface Pill {
   id: string;
@@ -12,6 +20,25 @@ export interface Pill {
 }
 
 const PillsList = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
+  if (isLoading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#eeeeee" />
+      </View>
+    );
+  }
   const renderItem = ({ item }: { item: Pill }) => {
     return (
       <PillsItem
@@ -36,5 +63,14 @@ const PillsList = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  loadingContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 118,
+  },
+});
 
 export default PillsList;
