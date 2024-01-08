@@ -1,4 +1,4 @@
-import React from "react";
+import { View, Text } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import ExploreScreen from "../screens/categories/ExploreScreen";
 import PresentMomentScreen from "../screens/categories/PresentMomentScreen";
@@ -10,6 +10,7 @@ import PillsScreen from "../screens/PillsScreen";
 import AllPillsScreen from "../screens/AllPillsScreen";
 import VideosScreen from "../screens/VideosScreen";
 import SearchScreen from "../screens/SearchScreen";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const Stack = createStackNavigator();
 
@@ -46,7 +47,24 @@ export const HomeStack = () => {
       />
       <Stack.Screen name="PillsScreen" component={PillsScreen} />
       <Stack.Screen name="AllPillsScreen" component={AllPillsScreen} />
-      <Stack.Screen name="VideosScreen" component={VideosScreen} />
+      <Stack.Screen
+        name="VideosScreen"
+        component={VideosScreen}
+        // options={{ title: "Zen Talks" }}
+        options={{
+          headerTitle: (props) => (
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <MaterialCommunityIcons
+                name="video-vintage"
+                size={24}
+                color="#000000"
+                style={{ marginRight: 10, paddingBottom: 3 }}
+              />
+              <Text style={{ marginLeft: 10, fontSize: 18 }}>Zen Talks</Text>
+            </View>
+          ),
+        }}
+      />
       <Stack.Screen name="SearchScreen" component={SearchScreen} />
     </Stack.Navigator>
   );

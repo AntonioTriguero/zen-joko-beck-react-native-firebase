@@ -40,6 +40,28 @@ Youtube videos rendering [library](https://lonelycpp.github.io/react-native-yout
 - `npm install react-native-webview`
 - `npm install react-native-youtube-iframe`
 
+---
+
+Libraries tested:
+
+To be able to [render FlatLists inside a ScrollView](https://github.com/computerjazz/react-native-draggable-flatlist/blob/main/README.md)
+
+- `npm install --save react-native-draggable-flatlist`
+
+```
+  module.exports = {
+    presets: [
+      ...
+    ],
+    plugins: [
+      ...
+      'react-native-reanimated/plugin',
+    ],
+  };
+```
+
+- `npx expo start -c`
+
 [Fonts](https://docs.expo.dev/versions/latest/sdk/font/) - ttf / otf
 
 - `npx expo install expo-font`

@@ -4,6 +4,7 @@ import {
   RefreshControl,
   ActivityIndicator,
   StyleSheet,
+  Text,
 } from "react-native";
 import VideosItem from "./VideosItem";
 import { useState, useEffect } from "react";
@@ -13,10 +14,14 @@ const videoIds: string[] = [
   "nKtoSnys-Vs",
   "ZXjDwEJ9tCA",
   "KYMW-qeyHR0",
+  "8VRlaOI8ME8",
+  "KTc5RHNwr1I?si",
+  "u4ES89alu-U",
+  "klIo5-racvo",
 ];
 
-const PillsList = () => {
-  //
+const PillsList = ({ forScreen }: { forScreen?: boolean }) => {
+  // Activity indicator of loading data
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -38,8 +43,18 @@ const PillsList = () => {
     );
   }
 
-  const renderItem = ({ item }: { item: string }) => {
-    return <VideosItem videoId={item} />;
+  const renderItem = ({ item, index }: { item: string; index: number }) => {
+    return (
+      <>
+        {forScreen ? (
+          <Text style={{ color: "#eeeeee", textAlign: "center", marginTop: 5 }}>
+            Talk num.{index + 1}
+          </Text>
+        ) : null}
+
+        <VideosItem videoId={item} forScreen />
+      </>
+    );
   };
   return (
     <View>
@@ -47,9 +62,7 @@ const PillsList = () => {
         data={videoIds}
         keyExtractor={(item) => item}
         renderItem={renderItem}
-        horizontal
-        // numColumns={2}
-        // refreshControl={<RefreshControl refreshing={false} onRefresh={() => fetchData()} />}
+        horizontal={!forScreen}
       />
     </View>
   );

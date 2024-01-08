@@ -9,7 +9,15 @@ import {
 } from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
 
-const VideosItem = ({ videoId }: { videoId: string }) => {
+const VideosItem = ({
+  videoId,
+  forScreen,
+}: {
+  videoId: string;
+  forScreen?: boolean;
+}) => {
+  // Youtube playing button logic:
+
   const [playing, setPlaying] = useState(false);
 
   const onStateChange = useCallback((state: any) => {
@@ -24,7 +32,7 @@ const VideosItem = ({ videoId }: { videoId: string }) => {
   }, []);
 
   return (
-    <View style={styles.card}>
+    <View style={[styles.card, { marginVertical: forScreen ? 5 : 0 }]}>
       <YoutubePlayer
         height={100}
         play={playing}
