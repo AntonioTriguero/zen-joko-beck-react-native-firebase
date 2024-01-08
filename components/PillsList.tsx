@@ -7,7 +7,6 @@ import {
   Text,
 } from "react-native";
 import PillsItem from "./PillsItem";
-import { pills } from "../data/pillsData";
 import { useState, useEffect } from "react";
 
 export interface Pill {
@@ -17,9 +16,15 @@ export interface Pill {
   photo: string;
   category: string;
   source: string;
+  forScreen?: boolean;
 }
 
-const PillsList = () => {
+interface Pills {
+  pills: Pill[];
+  forScreen?: boolean;
+}
+
+const PillsList = ({ pills, forScreen }: Pills) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -48,6 +53,7 @@ const PillsList = () => {
         photo={item.photo}
         category={item.category}
         source={item.source}
+        forScreen
       />
     );
   };
@@ -57,7 +63,7 @@ const PillsList = () => {
         data={pills}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
-        horizontal
+        horizontal={!forScreen}
         // refreshControl={<RefreshControl refreshing={false} onRefresh={() => fetchData()} />}
       />
     </View>

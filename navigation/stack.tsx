@@ -7,10 +7,10 @@ import BoundariesScreen from "../screens/categories/BoundariesScreen";
 import RelationshipsScreen from "../screens/categories/RelationshipsScreen";
 import HomeScreen from "../screens/HomeScreen";
 import PillsScreen from "../screens/PillsScreen";
-import AllPillsScreen from "../screens/AllPillsScreen";
 import VideosScreen from "../screens/VideosScreen";
 import SearchScreen from "../screens/SearchScreen";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 
 const Stack = createStackNavigator();
 
@@ -46,11 +46,26 @@ export const HomeStack = () => {
         component={RelationshipsScreen}
       />
       <Stack.Screen name="PillsScreen" component={PillsScreen} />
-      <Stack.Screen name="AllPillsScreen" component={AllPillsScreen} />
+      {/* <Stack.Screen
+        name="AllPillsScreen"
+        component={AllPillsScreen}
+        options={{
+          headerTitle: (props) => (
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Ionicons
+                name="book"
+                size={20}
+                color="#000000"
+                style={{ marginRight: 10, paddingTop: 3 }}
+              />
+              <Text style={{ marginLeft: 10, fontSize: 18 }}>Zen Pills</Text>
+            </View>
+          ),
+        }}
+      /> */}
       <Stack.Screen
         name="VideosScreen"
         component={VideosScreen}
-        // options={{ title: "Zen Talks" }}
         options={{
           headerTitle: (props) => (
             <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -65,7 +80,23 @@ export const HomeStack = () => {
           ),
         }}
       />
-      <Stack.Screen name="SearchScreen" component={SearchScreen} />
+      <Stack.Screen
+        name="SearchScreen"
+        component={SearchScreen}
+        options={{
+          headerTitle: (props) => (
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Ionicons
+                name="book"
+                size={20}
+                color="#000000"
+                style={{ marginRight: 10, paddingTop: 3 }}
+              />
+              <Text style={{ marginLeft: 10, fontSize: 18 }}>Zen Pills</Text>
+            </View>
+          ),
+        }}
+      />
     </Stack.Navigator>
   );
 };

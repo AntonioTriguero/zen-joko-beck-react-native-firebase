@@ -2,12 +2,15 @@ import { Pill } from "./PillsList";
 import { TouchableOpacity, Image, StyleSheet, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-const PillsItem = ({ id, title, text, photo, category, source }: Pill) => {
+const PillsItem = (
+  { id, title, text, photo, category, source }: Pill,
+  forScreen?: boolean
+) => {
   const navigation = useNavigation<any>();
 
   return (
     <TouchableOpacity
-      style={styles.card}
+      style={[styles.card, { marginVertical: forScreen ? 5 : 0 }]}
       onPress={() =>
         navigation.navigate("PillsScreen", {
           id,

@@ -1,7 +1,6 @@
 import {
   View,
   FlatList,
-  RefreshControl,
   ActivityIndicator,
   StyleSheet,
   Text,
@@ -20,8 +19,8 @@ const videoIds: string[] = [
   "klIo5-racvo",
 ];
 
-const PillsList = ({ forScreen }: { forScreen?: boolean }) => {
-  // Activity indicator of loading data
+const VideosList = ({ forScreen }: { forScreen?: boolean }) => {
+  // Activity indicator of loading fake data:
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -77,4 +76,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PillsList;
+export default VideosList;

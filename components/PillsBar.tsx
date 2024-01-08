@@ -3,6 +3,7 @@ import PillsList from "./PillsList";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { pills } from "../data/pillsData";
 
 const PillsBar = () => {
   const navigation = useNavigation<any>();
@@ -20,7 +21,7 @@ const PillsBar = () => {
             marginBottom: 10,
             justifyContent: "space-between",
           }}
-          onPress={() => navigation.navigate("AllPillsScreen")}
+          onPress={() => navigation.navigate("SearchScreen")}
         >
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Ionicons
@@ -52,7 +53,7 @@ const PillsBar = () => {
 
         {/*<PillsList />*/}
 
-        <PillsList />
+        <PillsList pills={pills} />
       </View>
     </>
   );
