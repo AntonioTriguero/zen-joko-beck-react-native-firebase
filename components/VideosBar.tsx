@@ -60,8 +60,7 @@ const styles = StyleSheet.create({
   pillsBox: {
     backgroundColor: "#000000",
     paddingHorizontal: 20,
-    paddingBottom: 20,
-    paddingTop: 10,
+    paddingVertical: 10,
     justifyContent: "center",
     borderWidth: 0,
     borderColor: "transparent",

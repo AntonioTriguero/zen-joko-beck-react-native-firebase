@@ -23,7 +23,7 @@ const SearchBarImage = () => {
             name="search"
             size={20}
             color="white"
-            style={{ marginRight: 10, paddingTop: 3 }}
+            style={{ marginRight: 10 }}
           />
           <Text style={styles.input}>Search Topic</Text>
         </View>
@@ -35,14 +35,16 @@ const SearchBarImage = () => {
 const styles = StyleSheet.create({
   inputBox: {
     backgroundColor: "#242424",
-    padding: 5,
     flexDirection: "row",
+    padding: 10,
+    alighItems: "center",
   },
   searchBox: {
     backgroundColor: "#000000",
     paddingHorizontal: 20,
-    paddingTop: 5,
     paddingBottom: 5,
+    paddingTop: 10,
+
     justifyContent: "center",
   },
   input: {

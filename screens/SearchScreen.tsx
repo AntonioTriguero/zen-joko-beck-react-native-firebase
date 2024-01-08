@@ -1,7 +1,6 @@
 import { View, StyleSheet, TextInput } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { useState, useEffect } from "react";
-import SearchPillsList from "../components/SearchPillsList";
 import { pills } from "../data/pillsData";
 import PillsList from "../components/PillsList";
 
@@ -16,7 +15,6 @@ export interface Pill {
 
 const SearchScreen = () => {
   // Search states
-
   const [searchText, setSearchText] = useState("");
   const [searchTimeout, setSearchTimeout] = useState<null | NodeJS.Timeout>(
     null
