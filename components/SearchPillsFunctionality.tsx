@@ -1,8 +1,8 @@
 import { View, StyleSheet, TextInput } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { useState, useEffect } from "react";
-import { pills } from "../../data/pillsData";
-import PillsList from "../../components/PillsList";
+import { pills } from "../data/pillsData";
+import PillsList from "./PillsList";
 
 export interface Pill {
   id: string;
@@ -13,9 +13,12 @@ export interface Pill {
   source: string;
 }
 
-const PresentMomentScreen = () => {
-  // Search states
+interface Props {
+  topicFilter?: string;
+}
 
+const SearchPillsFunctionality = ({ topicFilter }: Props) => {
+  // Search states
   const [searchText, setSearchText] = useState("");
   const [searchTimeout, setSearchTimeout] = useState<null | NodeJS.Timeout>(
     null
@@ -23,11 +26,13 @@ const PresentMomentScreen = () => {
   const [searchedResults, setSearchedResults] = useState<Pill[]>([]);
 
   // First filter by category:
+  let filteredPills: Pill[] = [];
 
-  const filteredPills = pills.filter(
-    (pill) => pill.category === "present moment"
-  );
-
+  if (topicFilter) {
+    filteredPills = pills.filter((pill) => pill.category === topicFilter);
+  } else {
+    filteredPills = pills;
+  }
   // Search filter:
 
   const filterPills = (searchtext: string) => {
@@ -120,4 +125,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PresentMomentScreen;
+export default SearchPillsFunctionality;

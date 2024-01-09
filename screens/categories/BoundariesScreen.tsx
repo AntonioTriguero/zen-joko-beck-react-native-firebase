@@ -1,7 +1,7 @@
-import { Text } from "react-native";
+import SearchPillsFunctionality from "../../components/SearchPillsFunctionality";
 
 const BoundariesScreen = () => {
-  return <Text>BoundariesScreen</Text>;
+  return <SearchPillsFunctionality topicFilter="boundaries" />;
 };
 
 export default BoundariesScreen;

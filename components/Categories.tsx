@@ -9,9 +9,9 @@ import { useNavigation } from "@react-navigation/native";
 
 const exploreTags: string[] = [
   "Explore",
-  "Present moment",
+  "Awareness",
   "False fears",
-  "Bounderies",
+  "Boundaries",
   "Relationships",
 ];
 
@@ -21,8 +21,8 @@ const Categories = () => {
   const handleItemPress = (item: string): void => {
     if (item === "Explore") {
       navigation.navigate("ExploreScreen");
-    } else if (item === "Present moment") {
-      navigation.navigate("PresentMomentScreen");
+    } else if (item === "Awareness") {
+      navigation.navigate("AwarenessScreen");
     } else if (item === "False fears") {
       navigation.navigate("FalseFearsScreen");
     } else if (item === "Boundaries") {

@@ -1,7 +1,7 @@
-import { Text } from "react-native";
+import SearchPillsFunctionality from "../../components/SearchPillsFunctionality";
 
 const RelationshipsScreen = () => {
-  return <Text>Relationships</Text>;
+  return <SearchPillsFunctionality topicFilter="relationships" />;
 };
 
 export default RelationshipsScreen;
