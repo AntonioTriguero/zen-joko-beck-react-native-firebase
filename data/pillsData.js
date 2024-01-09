@@ -24,7 +24,7 @@ export const pills = [
   {
     id: "3",
     title: "Relationships are practice",
-    text: "Why are relationships such excellent practice? Why do they help us to go into what we might call the slow death of the ego? Because, aside from our formal sitting, there is no way that is superior to relationships in helping us see where we're stuck and what we're holding on to. As long as our buttons are pushed, we have a great chance to tearn and grow. So a relationship is a great gift, not because it makes us happy - it often doesn't - but because any intimate relationship, if we view it as practice, is the clearest mirror we can find.",
+    text: "Why are relationships such excellent practice? Why do they help us to go into what we might call the slow death of the ego? Because, aside from our formal sitting, there is no way that is superior to relationships in helping us see where we're stuck and what we're holding on to. \n\n As long as our buttons are pushed, we have a great chance to tearn and grow. So a relationship is a great gift, not because it makes us happy - it often doesn't - but because any intimate relationship, if we view it as practice, is the clearest mirror we can find.",
     source: "Everyday Zen, chapter 4: Relationships",
     category: "relationships",
     photo:
@@ -42,7 +42,7 @@ export const pills = [
   {
     id: "5",
     title: "Don't separate from life",
-    text: "There is life and we are embedded in it; we are not separate from life. We just are what life is because we are being what life is; we hear, we think, we see, we semll, and so on. We are embedded is life and there is no problem; life flows along. There is nothing to realize because when we are life itself, we have no questions about life. But that isn't the way our lives are - and so we have plenty of questions. We don't alwyas feel embedded because - while life is just life - when it seems ot threaten our personal viewpoint we become upset, and withdraw from it. Now life is over there, and I am over here thinking about it. I'm not embedded in it anymore; the painful even has happened over there and I want to think about it over here wo I can figure a way out of my suffering... ",
+    text: "There is life and we are embedded in it; we are not separate from life. We just are what life is because we are being what life is; we hear, we think, we see, we semll, and so on. We are embedded is life and there is no problem; life flows along. There is nothing to realize because when we are life itself, we have no questions about life. \n\n But that isn't the way our lives are - and so we have plenty of questions. We don't alwyas feel embedded because - while life is just life - when it seems ot threaten our personal viewpoint we become upset, and withdraw from it. Now life is over there, and I am over here thinking about it. I'm not embedded in it anymore; the painful even has happened over there and I want to think about it over here wo I can figure a way out of my suffering... ",
     source: "Everyday Zen, chapter 7: Boundaries",
     category: "boundaries",
     photo:
@@ -51,7 +51,7 @@ export const pills = [
   {
     id: "6",
     title: "Not fully alive",
-    text: "Without awareness of our sensations, we are not fully alive. Life is unsatisfactory for most people because they are absent form their experience much of the time. If we have been sitting for several years, we do it somewhat less. I don't know anyone who is fully present all of the time, hovewer. We're like the fish that is swimming about, looking for the great ocean of life, yet oblivious to its surroundings. Like the fish, we wonder about the meaning of life, not awake to the water all around us and the ocean that we are. The fish finally met a teacher who understood. The fish asked, 'what is the great ocean?' And the teacher simply laughed.",
+    text: "Without awareness of our sensations, we are not fully alive. Life is unsatisfactory for most people because they are absent form their experience much of the time. If we have been sitting for several years, we do it somewhat less. I don't know anyone who is fully present all of the time, hovewer. \n\n We're like the fish that is swimming about, looking for the great ocean of life, yet oblivious to its surroundings. Like the fish, we wonder about the meaning of life, not awake to the water all around us and the ocean that we are. The fish finally met a teacher who understood. The fish asked, 'what is the great ocean?' And the teacher simply laughed.",
     source: "Nothing Special, chapter 5: Awareness",
     category: "awareness",
     photo:
@@ -60,7 +60,7 @@ export const pills = [
   {
     id: "7",
     title: "Wrong misconception",
-    text: "The way we usually hold a relationship is that, 'This relationship is there, out there, and it's supposed to give me pleasure. At the very least, it shouldn't give me discomfort.' In other words we make this relationship into a dish of ice cream. That dish of ice cream is there to give me pleasure and give me comfort. And very few of us view our relationship in any other light than, 'There it is; I've picked you out, and you know what you're supposed to do'. So ordinarily when we worry about relationships, we're not talking about the nice parts. Often the nice parts may even be predominant. But what we're interested in is the unpleasantness: 'It shoudn't be there.' And when I way 'unpleasant,' it could range from just annoyance to a state more intense than that.",
+    text: "The way we usually hold a relationship is that, 'This relationship is there, out there, and it's supposed to give me pleasure. At the very least, it shouldn't give me discomfort.' In other words we make this relationship into a dish of ice cream. That dish of ice cream is there to give me pleasure and give me comfort. And very few of us view our relationship in any other light than, 'There it is; I've picked you out, and you know what you're supposed to do'. \n\n So ordinarily when we worry about relationships, we're not talking about the nice parts. Often the nice parts may even be predominant. But what we're interested in is the unpleasantness: 'It shoudn't be there.' And when I way 'unpleasant,' it could range from just annoyance to a state more intense than that.",
     source: "Everyday Zen, chapter 4: Relationships",
     category: "relationships",
     photo:

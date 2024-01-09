@@ -1,7 +1,7 @@
 import SearchPillsFunctionality from "../components/SearchPillsFunctionality";
 
-const SearchScreen = () => {
+const SearchAllPillsScreen = () => {
   return <SearchPillsFunctionality />;
 };
 
-export default SearchScreen;
+export default SearchAllPillsScreen;

@@ -15,7 +15,7 @@ const SearchBarImage = () => {
       <TouchableOpacity
         style={styles.searchBox}
         onPress={() => {
-          navigation.navigate("SearchScreen");
+          navigation.navigate("SearchAllPillsScreen");
         }}
       >
         <View style={styles.inputBox}>

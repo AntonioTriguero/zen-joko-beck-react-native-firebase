@@ -8,7 +8,7 @@ import RelationshipsScreen from "../screens/categories/RelationshipsScreen";
 import HomeScreen from "../screens/HomeScreen";
 import PillsScreen from "../screens/PillsScreen";
 import VideosScreen from "../screens/VideosScreen";
-import SearchScreen from "../screens/SearchScreen";
+import SearchAllPillsScreen from "../screens/SearchAllPillsScreen";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -16,7 +16,7 @@ const Stack = createStackNavigator();
 
 export const HomeStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName="HomeScreen">
       <Stack.Screen
         name="HomeScreen"
         options={{
@@ -55,39 +55,73 @@ export const HomeStack = () => {
         component={RelationshipsScreen}
         options={{ title: "About Relationships" }}
       />
-      <Stack.Screen name="PillsScreen" component={PillsScreen} />
+      <Stack.Screen
+        name="PillsScreen"
+        component={PillsScreen}
+        options={{
+          headerTitle: () => (
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Ionicons
+                name="book"
+                size={20}
+                color="#eeeeee"
+                style={{ marginRight: 10, paddingTop: 3 }}
+              />
+              <Text style={{ marginLeft: 10, fontSize: 18, color: "#eeeeee" }}>
+                Zen Pill Reading
+              </Text>
+            </View>
+          ),
+          headerStyle: {
+            backgroundColor: "#1b5a67",
+          },
+          headerTintColor: "#eeeeee", // the back arrow
+        }}
+      />
       <Stack.Screen
         name="VideosScreen"
         component={VideosScreen}
         options={{
-          headerTitle: (props) => (
+          headerTitle: () => (
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <MaterialCommunityIcons
                 name="video-vintage"
                 size={24}
-                color="#000000"
+                color="#eeeeee"
                 style={{ marginRight: 10, paddingBottom: 3 }}
               />
-              <Text style={{ marginLeft: 10, fontSize: 18 }}>Zen Talks</Text>
+              <Text style={{ marginLeft: 10, fontSize: 18, color: "#eeeeee" }}>
+                Zen Talks
+              </Text>
             </View>
           ),
+          headerStyle: {
+            backgroundColor: "#1b5a67",
+          },
+          headerTintColor: "#eeeeee", // the back arrow
         }}
       />
       <Stack.Screen
-        name="SearchScreen"
-        component={SearchScreen}
+        name="SearchAllPillsScreen"
+        component={SearchAllPillsScreen}
         options={{
           headerTitle: (props) => (
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Ionicons
                 name="book"
                 size={20}
-                color="#000000"
+                color="#eeeeee"
                 style={{ marginRight: 10, paddingTop: 3 }}
               />
-              <Text style={{ marginLeft: 10, fontSize: 18 }}>Zen Pills</Text>
+              <Text style={{ marginLeft: 10, fontSize: 18, color: "#eeeeee" }}>
+                Zen Pills
+              </Text>
             </View>
           ),
+          headerStyle: {
+            backgroundColor: "#1b5a67",
+          },
+          headerTintColor: "#eeeeee", // the back arrow
         }}
       />
     </Stack.Navigator>

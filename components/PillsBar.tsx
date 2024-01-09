@@ -21,7 +21,7 @@ const PillsBar = () => {
             marginBottom: 10,
             justifyContent: "space-between",
           }}
-          onPress={() => navigation.navigate("SearchScreen")}
+          onPress={() => navigation.navigate("SearchAllPillsScreen")}
         >
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Ionicons

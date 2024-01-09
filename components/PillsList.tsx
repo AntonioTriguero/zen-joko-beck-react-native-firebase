@@ -26,6 +26,18 @@ interface Pills {
 
 const PillsList = ({ pills, forScreen }: Pills) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
+
+  // refresh effect:
+
+  const handleRefresh = () => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 2000);
+  };
+
+  // loading effect:
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -64,7 +76,8 @@ const PillsList = ({ pills, forScreen }: Pills) => {
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
         horizontal={!forScreen}
-        // refreshControl={<RefreshControl refreshing={false} onRefresh={() => fetchData()} />}
+        refreshing={refreshing}
+        onRefresh={handleRefresh}
       />
     </View>
   );
