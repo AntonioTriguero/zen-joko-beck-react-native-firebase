@@ -10,11 +10,25 @@ In Progress ⚠
 
 ## Installation:
 
-- `npx create-expo-app --template` --> then choose 'Blank (TypeScript)'
+Expo CLI is a command-line tool that allows you to create, develop, and manage Expo projects:
+
+- `npm install -g expo-cli`
+
+---
+
+Create a project:
+
+- `npx create-expo-app --template` --> then choose 'Blank (TypeScript)' // or `expo init <name of app>` (it also lets you choose between js ts)
 
 - `npm install -D @tsconfig/react-native @types/jest @types/react @types/react-test-renderer typescript` (the typescript types libraries)
 
 ---
+
+To run project on web (it is uncompatible with react-native-youtube-iframe package)
+
+- `npx expo install react-native-web@~0.19.6 `
+- `npx expo install react-dom@18.2.0 `
+- `npx expo install @expo/webpack-config`
 
 ### Libraries:
 

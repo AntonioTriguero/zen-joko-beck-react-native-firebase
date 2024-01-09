@@ -46,7 +46,7 @@ export const pills = [
     source: "Everyday Zen, chapter 7: Boundaries",
     category: "boundaries",
     photo:
-      "https://images.saatchiart.com/saatchi/20600/art/8306244/7371157-HSC00001-7.jpg",
+      "https://img.freepik.com/vector-premium/simbolo-yin-yang-cultura-filosofia-dibujo-vectorial-taoismo-chino-oriental-grunge_149326-6416.jpg?w=2000",
   },
   {
     id: "6",

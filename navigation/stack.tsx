@@ -34,26 +34,102 @@ export const HomeStack = () => {
         }}
         component={HomeScreen}
       />
-      <Stack.Screen name="ExploreScreen" component={ExploreScreen} />
+      <Stack.Screen
+        name="ExploreScreen"
+        component={ExploreScreen}
+        options={{ title: "Explore Topics" }}
+      />
       <Stack.Screen
         name="AwarenessScreen"
         component={AwarenessScreen}
-        options={{ title: "About Awareness" }}
+        options={{
+          headerTitle: () => (
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Ionicons
+                name="book"
+                size={20}
+                color="#eeeeee"
+                style={{ marginRight: 10, paddingTop: 3 }}
+              />
+              <Text style={{ marginLeft: 10, fontSize: 18, color: "#eeeeee" }}>
+                About Awareness
+              </Text>
+            </View>
+          ),
+          headerStyle: {
+            backgroundColor: "#1b5a67",
+          },
+          headerTintColor: "#eeeeee", // the back arrow
+        }}
       />
       <Stack.Screen
         name="FalseFearsScreen"
         component={FalseFearsScreen}
-        options={{ title: "About Fears" }}
+        options={{
+          headerTitle: () => (
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Ionicons
+                name="book"
+                size={20}
+                color="#eeeeee"
+                style={{ marginRight: 10, paddingTop: 3 }}
+              />
+              <Text style={{ marginLeft: 10, fontSize: 18, color: "#eeeeee" }}>
+                About fears
+              </Text>
+            </View>
+          ),
+          headerStyle: {
+            backgroundColor: "#1b5a67",
+          },
+          headerTintColor: "#eeeeee", // the back arrow
+        }}
       />
       <Stack.Screen
         name="BoundariesScreen"
         component={BoundariesScreen}
-        options={{ title: "About Boundaries" }}
+        options={{
+          headerTitle: () => (
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Ionicons
+                name="book"
+                size={20}
+                color="#eeeeee"
+                style={{ marginRight: 10, paddingTop: 3 }}
+              />
+              <Text style={{ marginLeft: 10, fontSize: 18, color: "#eeeeee" }}>
+                About Boundaries
+              </Text>
+            </View>
+          ),
+          headerStyle: {
+            backgroundColor: "#1b5a67",
+          },
+          headerTintColor: "#eeeeee", // the back arrow
+        }}
       />
       <Stack.Screen
         name="RelationshipsScreen"
         component={RelationshipsScreen}
-        options={{ title: "About Relationships" }}
+        options={{
+          headerTitle: () => (
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Ionicons
+                name="book"
+                size={20}
+                color="#eeeeee"
+                style={{ marginRight: 10, paddingTop: 3 }}
+              />
+              <Text style={{ marginLeft: 10, fontSize: 18, color: "#eeeeee" }}>
+                About Relationships
+              </Text>
+            </View>
+          ),
+          headerStyle: {
+            backgroundColor: "#1b5a67",
+          },
+          headerTintColor: "#eeeeee", // the back arrow
+        }}
       />
       <Stack.Screen
         name="PillsScreen"

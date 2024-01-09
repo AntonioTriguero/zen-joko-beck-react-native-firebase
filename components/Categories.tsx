@@ -13,6 +13,11 @@ const exploreTags: string[] = [
   "False fears",
   "Boundaries",
   "Relationships",
+  "Change",
+  "Coping",
+  "Recovery",
+  "Practice",
+  "Self",
 ];
 
 const Categories = () => {
