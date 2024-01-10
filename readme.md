@@ -1,12 +1,37 @@
 # Joko Beck Zen Teachings 🌸 - React Native App
 
-A beautiful app that lets you read excerpts of her teachings, and save them as 'read', all organized by categories. You also have her video teachings all in the same place. The purpose is to offer an application that quickly inspires you to keep Beck's 'Nothing Special' powerful Zen way.
+## INTRO:
+
+This is a beautiful app that lets you read excerpts of her teachings, and save them as 'read', all organized by categories. You also have her video teachings all in the same place.
+
+The purpose is to offer an application that quickly inspires you to keep Beck's 'Nothing Special' powerful Zen way.
 
 Layout inspired on Kindle's mobile app and its `horizontal carousels`:
 
+![joko-beck-app-demo-ezgif com-video-to-gif-converter](https://github.com/vanesascode/zen-joko-beck-react-native-firebase/assets/131259155/fcc4d646-52a3-4b67-947c-48f5d6cfc808)
+
+## SEE FULL DEMO HERE:
+
 https://github.com/vanesascode/fils/assets/131259155/78e8219c-40e8-43ad-b366-70733e8ac680
 
-## Installation:
+## FULL DESCRIPTION:
+
+It's all about Joko Beck, an American Zen teacher that I find really inspiring. 🌸 The app lets you explore her ideas in a very neat and organized way:
+
+- Basically, you can browse through different categories and discover these bite-sized 'pills of information' with Joko Beck's teachings. It's a simple way to dive into her wisdom and explore the topics that resonate with you.
+
+- You can also save your favorite pills to your 'read pills' list. It's like having your own little collection of inspiration right at your fingertips. Whenever you need a little pick-me-up, you can always go back and revisit them.
+
+- And all of Joko Beck's video teachings are also available in the app. So, you can switch between reading and watching her teachings, all in one place. It's like having a virtual Zen master in your pocket!
+
+## TECHNICAL INFO:
+
+### FIREBASE DATABASE:
+
+- `npm install firebase`
+- It's a collection called 'pills', fetched and modified directly in the React Native app.
+
+### REACT NATIVE:
 
 Expo CLI is a command-line tool that allows you to create, develop, and manage Expo projects:
 
@@ -34,14 +59,12 @@ Icons. You choose an icon from the [site](https://icons.expo.fyi/Index) and it t
 
 - `npm install @expo/vector-icons`
 
-[React Navigation](https://reactnavigation.org/)
-
-Basics for navigating between screens:
+[React Navigation](https://reactnavigation.org/). Basics for navigating between screens:
 
 - `npm install @react-navigation/native`
 - `npx expo install react-native-screens react-native-safe-area-context`
 
-Stack navitation(transition between screens where each new screen is placed on top of a stack):
+Stack navigation (transition between screens where each new screen is placed on top of a stack):
 
 - `npm install @react-navigation/stack`
 - `npx expo install react-native-gesture-handler` (Gesture recognizers and touch handling components)
@@ -51,10 +74,6 @@ Youtube videos rendering [library](https://lonelycpp.github.io/react-native-yout
 
 - `npm install react-native-webview`
 - `npm install react-native-youtube-iframe`
-
-FIREBASE DATABASE:
-
-- `npm install firebase`
 
 ---
 

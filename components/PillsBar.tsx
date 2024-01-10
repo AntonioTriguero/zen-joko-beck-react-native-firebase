@@ -9,7 +9,6 @@ import PillsList from "./PillsList";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-// import { pills } from "../data/pillsData";
 import { useEffect, useState } from "react";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import app from "../firebase-database";

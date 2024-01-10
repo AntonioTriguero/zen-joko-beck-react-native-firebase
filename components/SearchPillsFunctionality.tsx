@@ -1,7 +1,6 @@
 import { View, StyleSheet, TextInput } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { useState, useEffect } from "react";
-import { pills } from "../data/pillsData";
 import PillsList from "./PillsList";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import app from "../firebase-database";

@@ -1,12 +1,5 @@
 import { useState, useCallback } from "react";
-import {
-  Button,
-  Alert,
-  Text,
-  View,
-  StyleSheet,
-  TouchableOpacity,
-} from "react-native";
+import { Alert, Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
 
 const VideosItem = ({
