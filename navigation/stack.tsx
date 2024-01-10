@@ -38,6 +38,7 @@ export const HomeStack = () => {
         }}
         component={HomeScreen}
       />
+
       <Stack.Screen
         name="ExploreScreen"
         component={ExploreScreen}
@@ -54,6 +55,7 @@ export const HomeStack = () => {
           ),
         }}
       />
+
       <Stack.Screen
         name="AwarenessScreen"
         component={AwarenessScreen}
@@ -78,6 +80,7 @@ export const HomeStack = () => {
           ),
         }}
       />
+
       <Stack.Screen
         name="AlreadyReadPillsScreen"
         component={AlreadyReadPillsScreen}
@@ -90,7 +93,7 @@ export const HomeStack = () => {
           headerStyle: {
             backgroundColor: "#1b5a67",
           },
-          headerTintColor: "#eeeeee", // the back arrow
+          headerTintColor: "#eeeeee",
           headerRight: () => (
             <MaterialCommunityIcons
               name="home"
@@ -102,6 +105,7 @@ export const HomeStack = () => {
           ),
         }}
       />
+
       <Stack.Screen
         name="FalseFearsScreen"
         component={FalseFearsScreen}
@@ -112,7 +116,7 @@ export const HomeStack = () => {
           headerStyle: {
             backgroundColor: "#1b5a67",
           },
-          headerTintColor: "#eeeeee", // the back arrow
+          headerTintColor: "#eeeeee",
           headerRight: () => (
             <MaterialCommunityIcons
               name="home"
@@ -124,6 +128,7 @@ export const HomeStack = () => {
           ),
         }}
       />
+
       <Stack.Screen
         name="BoundariesScreen"
         component={BoundariesScreen}
@@ -136,7 +141,7 @@ export const HomeStack = () => {
           headerStyle: {
             backgroundColor: "#1b5a67",
           },
-          headerTintColor: "#eeeeee", // the back arrow
+          headerTintColor: "#eeeeee",
           headerRight: () => (
             <MaterialCommunityIcons
               name="home"
@@ -148,6 +153,7 @@ export const HomeStack = () => {
           ),
         }}
       />
+
       <Stack.Screen
         name="RelationshipsScreen"
         component={RelationshipsScreen}
@@ -160,7 +166,7 @@ export const HomeStack = () => {
           headerStyle: {
             backgroundColor: "#1b5a67",
           },
-          headerTintColor: "#eeeeee", // the back arrow
+          headerTintColor: "#eeeeee",
           headerRight: () => (
             <MaterialCommunityIcons
               name="home"
@@ -172,6 +178,7 @@ export const HomeStack = () => {
           ),
         }}
       />
+
       <Stack.Screen
         name="PillsScreen"
         component={PillsScreen}
@@ -184,7 +191,7 @@ export const HomeStack = () => {
           headerStyle: {
             backgroundColor: "#1b5a67",
           },
-          headerTintColor: "#eeeeee", // the back arrow
+          headerTintColor: "#eeeeee",
           headerRight: () => (
             <MaterialCommunityIcons
               name="home"
@@ -196,6 +203,7 @@ export const HomeStack = () => {
           ),
         }}
       />
+
       <Stack.Screen
         name="VideosScreen"
         component={VideosScreen}
@@ -216,9 +224,10 @@ export const HomeStack = () => {
           headerStyle: {
             backgroundColor: "#1b5a67",
           },
-          headerTintColor: "#eeeeee", // the back arrow
+          headerTintColor: "#eeeeee",
         }}
       />
+
       <Stack.Screen
         name="SearchAllPillsScreen"
         component={SearchAllPillsScreen}
@@ -239,7 +248,7 @@ export const HomeStack = () => {
           headerStyle: {
             backgroundColor: "#1b5a67",
           },
-          headerTintColor: "#eeeeee", // the back arrow
+          headerTintColor: "#eeeeee",
           headerRight: () => (
             <MaterialCommunityIcons
               name="home"

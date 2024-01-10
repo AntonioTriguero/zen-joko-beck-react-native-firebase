@@ -8,8 +8,8 @@ const VideosBar = () => {
   const navigation = useNavigation<any>();
   return (
     <>
-      <View style={styles.pillsBox}>
-        {/*<Pills bar title />*/}
+      <View style={styles.videosBox}>
+        {/*<Videos bar title />*/}
 
         {/*LEFT SIDE*/}
 
@@ -49,7 +49,9 @@ const VideosBar = () => {
             style={{ marginRight: 10 }}
           />
         </TouchableOpacity>
-        {/*<Videos />*/}
+
+        {/*<Videos list />*/}
+
         <VideosList />
       </View>
     </>
@@ -57,7 +59,7 @@ const VideosBar = () => {
 };
 
 const styles = StyleSheet.create({
-  pillsBox: {
+  videosBox: {
     backgroundColor: "#000000",
     paddingHorizontal: 20,
     paddingVertical: 10,

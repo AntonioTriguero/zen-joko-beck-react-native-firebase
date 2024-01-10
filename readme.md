@@ -16,7 +16,7 @@ https://github.com/vanesascode/fils/assets/131259155/78e8219c-40e8-43ad-b366-707
 
 ## FULL DESCRIPTION:
 
-It's all about Joko Beck, an American Zen teacher that I find really inspiring. 🌸 The app lets you explore her ideas in a very neat and organized way:
+It's an app about Joko Beck, an American Zen teacher that I find really inspiring. 🌸 The app lets you explore her ideas in a very neat and organized way:
 
 - Basically, you can browse through different categories and discover these bite-sized 'pills of information' with Joko Beck's teachings. It's a simple way to dive into her wisdom and explore the topics that resonate with you.
 

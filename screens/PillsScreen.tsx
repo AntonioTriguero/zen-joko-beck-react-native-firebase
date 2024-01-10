@@ -11,15 +11,8 @@ import {
 import { ScrollView } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
-import {
-  getFirestore,
-  collection,
-  getDoc,
-  doc,
-  updateDoc,
-} from "firebase/firestore";
+import { getFirestore, getDoc, doc, updateDoc } from "firebase/firestore";
 import app from "../firebase-database";
-import { useState, useEffect } from "react";
 
 const db = getFirestore(app);
 
@@ -107,15 +100,6 @@ const PillsScreen = () => {
           source,
           read,
         });
-        navigation.navigate("PillsScreen", {
-          id,
-          title,
-          text,
-          photo,
-          category,
-          source,
-          read,
-        });
       } else {
         Alert.alert("Document not found.");
       }
@@ -132,7 +116,7 @@ const PillsScreen = () => {
           {/*HEADER*/}
 
           <View style={{ flexDirection: "row", marginBottom: 20 }}>
-            {/*Image */}
+            {/*Image of the pill */}
 
             <View style={{ width: "50%", alignItems: "center" }}>
               <Image
@@ -144,7 +128,7 @@ const PillsScreen = () => {
             {/*Title & button right side*/}
 
             <View style={{ width: "50%" }}>
-              {/*Title */}
+              {/*Title of the pill */}
               <View
                 style={{
                   width: "80%",
@@ -159,12 +143,11 @@ const PillsScreen = () => {
                 </Text>
               </View>
 
-              {/*Button & share icon */}
+              {/*'read' button & share icon */}
               <View
                 style={{
                   flexDirection: "row",
                   alignItems: "center",
-                  // justifyContent: "space-between",
                 }}
               >
                 {/*button*/}
@@ -205,7 +188,7 @@ const PillsScreen = () => {
             </View>
           </View>
 
-          {/*Info */}
+          {/*Info of the pill*/}
 
           <View style={styles.textBox}>
             {/*Category */}

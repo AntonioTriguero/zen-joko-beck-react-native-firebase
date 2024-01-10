@@ -9,33 +9,35 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      {/*Search bar Image to click and go the search screen*/}
+      {/*'Fake search bar' image to click and go the search screen:*/}
 
       <SearchBarImage />
 
-      {/*Categories bar*/}
+      {/*Categories bar:*/}
 
       <Categories />
 
-      {/*<Grey Bar Separator />*/}
+      {/*<Grey Bar Separator:/>*/}
 
       <BarSeparator />
 
-      {/*Pills bar*/}
+      {/*Pills bar:*/}
 
       <PillsBar />
 
-      {/*<Grey Bar Separator />*/}
+      {/*<Grey Bar Separator:/>*/}
 
       <BarSeparator />
 
-      {/*Video bar*/}
+      {/*Videos bar:*/}
 
       <VideosBar />
 
-      {/*<Grey Bar Separator />*/}
+      {/*<Grey Bar Separator: />*/}
 
       <BarSeparator />
+
+      {/*<Signature: />*/}
 
       <TouchableOpacity
         onPress={() => {

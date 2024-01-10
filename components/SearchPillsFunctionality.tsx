@@ -61,7 +61,7 @@ const SearchPillsFunctionality = ({ topicFilter, onlyRead }: Props) => {
     getPills();
   }, []);
 
-  // handle refresh:
+  // Handle refresh:
 
   const handleRefresh = () => {
     setRefreshing(true);
@@ -69,7 +69,8 @@ const SearchPillsFunctionality = ({ topicFilter, onlyRead }: Props) => {
     setRefreshing(false);
   };
 
-  // First filter by category:
+  // First filter by category or by being already 'read' by the user:
+
   let filteredPills: Pill[] = [];
 
   if (topicFilter) {
@@ -79,6 +80,7 @@ const SearchPillsFunctionality = ({ topicFilter, onlyRead }: Props) => {
   } else {
     filteredPills = pills;
   }
+
   // Search filter:
 
   const filterPills = (searchtext: string) => {
@@ -114,6 +116,7 @@ const SearchPillsFunctionality = ({ topicFilter, onlyRead }: Props) => {
     <>
       <View style={{ backgroundColor: "#000000", flex: 1 }}>
         {/* Search bar */}
+
         <View style={styles.searchBox}>
           <View style={styles.inputBox}>
             <Feather
@@ -123,7 +126,7 @@ const SearchPillsFunctionality = ({ topicFilter, onlyRead }: Props) => {
               style={{ marginRight: 10, paddingTop: 3 }}
             />
             <TextInput
-              style={styles.input}
+              style={{ color: "#eeeeee" }}
               placeholder="Search Topic"
               value={searchText}
               onChangeText={handleSearchChange}
@@ -131,6 +134,8 @@ const SearchPillsFunctionality = ({ topicFilter, onlyRead }: Props) => {
             />
           </View>
         </View>
+
+        {/* Pills list */}
 
         <View style={styles.container}>
           {searchText ? (
@@ -175,9 +180,6 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 5,
     justifyContent: "center",
-  },
-  input: {
-    color: "#eeeeee",
   },
 });
 

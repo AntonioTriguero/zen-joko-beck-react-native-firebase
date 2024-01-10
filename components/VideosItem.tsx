@@ -9,7 +9,7 @@ const VideosItem = ({
   videoId: string;
   forScreen?: boolean;
 }) => {
-  // Youtube playing button logic:
+  // Youtube PLAY button logic:
 
   const [playing, setPlaying] = useState(false);
 
