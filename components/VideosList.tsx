@@ -20,7 +20,8 @@ const videoIds: string[] = [
 ];
 
 const VideosList = ({ forScreen }: { forScreen?: boolean }) => {
-  // Activity indicator of fake data loading:
+  // Logic of activity indicator to show fake data loading effect:
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
