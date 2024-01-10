@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { useState } from "react";
 
 const exploreTags: string[] = [
   "Your Read Pills",

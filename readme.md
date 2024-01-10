@@ -1,12 +1,10 @@
 # Joko Beck Zen Teachings 🌸 - React Native App
 
-A beautiful app that lets you read excerpts of her teachings, all organized by categories. You also have her video teachings all in the same place. The purpose is to offer an application that quickly inspires you to keep Beck's 'Nothing Speacial' powerful Zen way.
+A beautiful app that lets you read excerpts of her teachings, and save them as 'read', all organized by categories. You also have her video teachings all in the same place. The purpose is to offer an application that quickly inspires you to keep Beck's 'Nothing Special' powerful Zen way.
 
 Layout inspired on Kindle's mobile app and its `horizontal carousels`:
 
-![Captura](https://github.com/vanesascode/zen-joko-beck-react-native-frontend/assets/131259155/650144fe-4a46-4944-befc-4735798ed772)
-
-In Progress ⚠
+https://github.com/vanesascode/fils/assets/131259155/78e8219c-40e8-43ad-b366-70733e8ac680
 
 ## Installation:
 
