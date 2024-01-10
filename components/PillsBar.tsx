@@ -23,6 +23,7 @@ interface Pills {
   category: string;
   photo: string;
   source: string;
+  read: boolean;
 }
 
 const PillsBar = () => {
@@ -37,7 +38,7 @@ const PillsBar = () => {
       const querySnapshot = await getDocs(collection(db, "pills"));
       const docs = [] as Pills[];
       querySnapshot.forEach((doc) => {
-        const { title, text, category, photo, source } = doc.data();
+        const { title, text, category, photo, source, read } = doc.data();
         docs.push({
           id: doc.id,
           title,
@@ -45,6 +46,7 @@ const PillsBar = () => {
           category,
           photo,
           source,
+          read,
         });
       });
       setPills(docs);
@@ -64,14 +66,6 @@ const PillsBar = () => {
     getPills();
     setRefreshing(false);
   };
-
-  // if (isLoading) {
-  //   return (
-  //     <View style={styles.loadingContainer}>
-  //       <ActivityIndicator size="large" color="#eeeeee" />
-  //     </View>
-  //   );
-  // }
 
   return (
     <>

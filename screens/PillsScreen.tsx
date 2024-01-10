@@ -5,28 +5,39 @@ import {
   View,
   Image,
   TouchableOpacity,
-  Modal,
+  Alert,
   Share,
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
-import { useState } from "react";
+import {
+  getFirestore,
+  collection,
+  getDoc,
+  doc,
+  updateDoc,
+} from "firebase/firestore";
+import app from "../firebase-database";
+import { useState, useEffect } from "react";
+
+const db = getFirestore(app);
 
 interface Pills {
-  id: number;
+  id: string;
   title: string;
   text: string;
   category: string;
   photo: string;
   source: string;
+  read: boolean;
 }
 
 const PillsScreen = () => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
   const navigation = useNavigation<any>();
   const route = useRoute();
-  const { id, title, text, category, photo, source } = route.params as Pills;
+  const { id, title, text, category, photo, source, read } =
+    route.params as Pills;
 
   // Share with other mobile apps:
 
@@ -35,6 +46,83 @@ const PillsScreen = () => {
       message: `Check out this text about Zen by Joko Beck on ${category}: \n\n ${title.toUpperCase()} \n\n${text}`,
       title: "Joko Beck Zen Teachings",
     });
+  };
+
+  // Handle read button
+
+  const toggleReadBoolean = async (id: string) => {
+    try {
+      const docRef = doc(db, "pills", id);
+      const docSnapshot = await getDoc(docRef);
+
+      if (docSnapshot.exists()) {
+        const { read } = docSnapshot.data() as Pills;
+        await updateDoc(docRef, { read: !read });
+        if (!read) {
+          Alert.alert(
+            "Pill added.",
+            "We hope you enjoyed it! Now you will see this pill in your 'read pills' list.",
+            [
+              {
+                text: "Ok",
+                style: "cancel",
+              },
+              {
+                text: "See my pills",
+                style: "destructive",
+                onPress: () => {
+                  navigation.navigate("AlreadyReadPillsScreen");
+                },
+              },
+            ],
+            { cancelable: true }
+          );
+        } else {
+          Alert.alert(
+            "Pill removed.",
+            "This pill has been removed from your 'read pills' list.",
+            [
+              {
+                text: "Ok",
+                style: "cancel",
+              },
+              {
+                text: "See my pills",
+                style: "destructive",
+                onPress: () => {
+                  navigation.navigate("AlreadyReadPillsScreen");
+                },
+              },
+            ],
+            { cancelable: true }
+          );
+        }
+
+        navigation.navigate("PillsScreen", {
+          id,
+          title,
+          text,
+          photo,
+          category,
+          source,
+          read,
+        });
+        navigation.navigate("PillsScreen", {
+          id,
+          title,
+          text,
+          photo,
+          category,
+          source,
+          read,
+        });
+      } else {
+        Alert.alert("Document not found.");
+      }
+    } catch (error) {
+      console.log(error);
+      Alert.alert("An error occurred.");
+    }
   };
 
   return (
@@ -81,9 +169,22 @@ const PillsScreen = () => {
               >
                 {/*button*/}
                 <View style={{ flex: 3 }}>
-                  <View style={styles.button}>
-                    <Text style={{ color: "#eeeeee", fontSize: 12 }}>Read</Text>
-                  </View>
+                  <TouchableOpacity
+                    style={[
+                      styles.button,
+                      { backgroundColor: read === true ? "#1b5a67" : "000" },
+                    ]}
+                    onPress={() => toggleReadBoolean(id)}
+                  >
+                    <Text
+                      style={{
+                        color: "#eeeeee",
+                        fontSize: 12,
+                      }}
+                    >
+                      Read
+                    </Text>
+                  </TouchableOpacity>
                 </View>
                 {/*share icon*/}
                 <View

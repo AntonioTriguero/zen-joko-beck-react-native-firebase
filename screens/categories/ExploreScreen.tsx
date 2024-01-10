@@ -6,8 +6,10 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
 
 const exploreTags: string[] = [
+  "Your Read Pills",
   "Awareness",
   "False fears",
   "Boundaries",
@@ -31,12 +33,21 @@ const ExploreScreen = () => {
       navigation.navigate("FalseFearsScreen");
     } else if (item === "Boundaries") {
       navigation.navigate("BoundariesScreen");
+    } else if (item === "Your Read Pills") {
+      navigation.navigate("AlreadyReadPillsScreen");
     }
   };
 
   const renderItem = ({ item, index }: { item: string; index: number }) => (
     <TouchableOpacity onPress={() => handleItemPress(item)}>
-      <View style={styles.categoryBox}>
+      <View
+        style={[
+          styles.categoryBox,
+          {
+            backgroundColor: item === "Your Read Pills" ? "000" : "#1b5a67",
+          },
+        ]}
+      >
         <Text
           style={{
             color: "#eeeeee",
@@ -57,7 +68,6 @@ const ExploreScreen = () => {
         keyExtractor={(item) => item}
         renderItem={renderItem}
         extraData={exploreTags.length}
-        // ItemSeparatorComponent={() => <View style={{ height: 20 }} />}
       />
     </View>
   );

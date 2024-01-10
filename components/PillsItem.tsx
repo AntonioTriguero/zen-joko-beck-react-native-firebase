@@ -3,7 +3,7 @@ import { TouchableOpacity, Image, StyleSheet, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const PillsItem = (
-  { id, title, text, photo, category, source }: Pill,
+  { id, title, text, photo, category, source, read }: Pill,
   forScreen?: boolean
 ) => {
   const navigation = useNavigation<any>();
@@ -19,6 +19,7 @@ const PillsItem = (
           photo,
           category,
           source,
+          read,
         })
       }
     >
@@ -27,8 +28,18 @@ const PillsItem = (
         source={{ uri: photo ? photo : "https://via.placeholder.com/150" }}
       />
       <Text style={styles.title}>"{title}"</Text>
-      <View style={styles.button}>
-        <Text style={{ color: "#000", fontSize: 12 }}>Read now</Text>
+      <View
+        style={[
+          styles.button,
+          {
+            backgroundColor: read ? "#1b5a67" : "#fff",
+            borderColor: read ? "transparent" : "#000000",
+          },
+        ]}
+      >
+        <Text style={{ color: read ? "#eeeeee" : "#000", fontSize: 12 }}>
+          {read ? "Read" : "Read now"}
+        </Text>
       </View>
     </TouchableOpacity>
   );
@@ -58,7 +69,6 @@ const styles = StyleSheet.create({
     overflow: "visible",
   },
   button: {
-    borderColor: "#000000",
     borderWidth: 1,
     paddingVertical: 5,
     paddingHorizontal: 12,

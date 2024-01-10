@@ -5,16 +5,20 @@ import AwarenessScreen from "../screens/categories/AwarenessScreen";
 import FalseFearsScreen from "../screens/categories/FalseFearsScreen";
 import BoundariesScreen from "../screens/categories/BoundariesScreen";
 import RelationshipsScreen from "../screens/categories/RelationshipsScreen";
+import AlreadyReadPillsScreen from "../screens/categories/AlreadyReadPillsScreen";
 import HomeScreen from "../screens/HomeScreen";
 import PillsScreen from "../screens/PillsScreen";
 import VideosScreen from "../screens/VideosScreen";
 import SearchAllPillsScreen from "../screens/SearchAllPillsScreen";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const Stack = createStackNavigator();
 
 export const HomeStack = () => {
+  const navigation = useNavigation<any>();
+
   return (
     <Stack.Navigator initialRouteName="HomeScreen">
       <Stack.Screen
@@ -37,29 +41,65 @@ export const HomeStack = () => {
       <Stack.Screen
         name="ExploreScreen"
         component={ExploreScreen}
-        options={{ title: "Explore Topics" }}
+        options={{
+          title: "Explore Topics",
+          headerRight: () => (
+            <MaterialCommunityIcons
+              name="home"
+              size={24}
+              color="#000"
+              style={{ marginRight: 20 }}
+              onPress={() => navigation.navigate("HomeScreen")}
+            />
+          ),
+        }}
       />
       <Stack.Screen
         name="AwarenessScreen"
         component={AwarenessScreen}
         options={{
           headerTitle: () => (
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Ionicons
-                name="book"
-                size={20}
-                color="#eeeeee"
-                style={{ marginRight: 10, paddingTop: 3 }}
-              />
-              <Text style={{ marginLeft: 10, fontSize: 18, color: "#eeeeee" }}>
-                About Awareness
-              </Text>
-            </View>
+            <Text style={{ fontSize: 18, color: "#eeeeee" }}>
+              About Awareness
+            </Text>
           ),
           headerStyle: {
             backgroundColor: "#1b5a67",
           },
           headerTintColor: "#eeeeee", // the back arrow
+          headerRight: () => (
+            <MaterialCommunityIcons
+              name="home"
+              size={24}
+              color="#eeeeee"
+              style={{ marginRight: 20 }}
+              onPress={() => navigation.navigate("HomeScreen")}
+            />
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="AlreadyReadPillsScreen"
+        component={AlreadyReadPillsScreen}
+        options={{
+          headerTitle: () => (
+            <Text style={{ fontSize: 18, color: "#eeeeee" }}>
+              'Read Pills' List
+            </Text>
+          ),
+          headerStyle: {
+            backgroundColor: "#1b5a67",
+          },
+          headerTintColor: "#eeeeee", // the back arrow
+          headerRight: () => (
+            <MaterialCommunityIcons
+              name="home"
+              size={24}
+              color="#eeeeee"
+              style={{ marginRight: 20 }}
+              onPress={() => navigation.navigate("HomeScreen")}
+            />
+          ),
         }}
       />
       <Stack.Screen
@@ -67,22 +107,21 @@ export const HomeStack = () => {
         component={FalseFearsScreen}
         options={{
           headerTitle: () => (
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Ionicons
-                name="book"
-                size={20}
-                color="#eeeeee"
-                style={{ marginRight: 10, paddingTop: 3 }}
-              />
-              <Text style={{ marginLeft: 10, fontSize: 18, color: "#eeeeee" }}>
-                About fears
-              </Text>
-            </View>
+            <Text style={{ fontSize: 18, color: "#eeeeee" }}>About fears</Text>
           ),
           headerStyle: {
             backgroundColor: "#1b5a67",
           },
           headerTintColor: "#eeeeee", // the back arrow
+          headerRight: () => (
+            <MaterialCommunityIcons
+              name="home"
+              size={24}
+              color="#eeeeee"
+              style={{ marginRight: 20 }}
+              onPress={() => navigation.navigate("HomeScreen")}
+            />
+          ),
         }}
       />
       <Stack.Screen
@@ -90,22 +129,23 @@ export const HomeStack = () => {
         component={BoundariesScreen}
         options={{
           headerTitle: () => (
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Ionicons
-                name="book"
-                size={20}
-                color="#eeeeee"
-                style={{ marginRight: 10, paddingTop: 3 }}
-              />
-              <Text style={{ marginLeft: 10, fontSize: 18, color: "#eeeeee" }}>
-                About Boundaries
-              </Text>
-            </View>
+            <Text style={{ fontSize: 18, color: "#eeeeee" }}>
+              About Boundaries
+            </Text>
           ),
           headerStyle: {
             backgroundColor: "#1b5a67",
           },
           headerTintColor: "#eeeeee", // the back arrow
+          headerRight: () => (
+            <MaterialCommunityIcons
+              name="home"
+              size={24}
+              color="#eeeeee"
+              style={{ marginRight: 20 }}
+              onPress={() => navigation.navigate("HomeScreen")}
+            />
+          ),
         }}
       />
       <Stack.Screen
@@ -113,22 +153,23 @@ export const HomeStack = () => {
         component={RelationshipsScreen}
         options={{
           headerTitle: () => (
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Ionicons
-                name="book"
-                size={20}
-                color="#eeeeee"
-                style={{ marginRight: 10, paddingTop: 3 }}
-              />
-              <Text style={{ marginLeft: 10, fontSize: 18, color: "#eeeeee" }}>
-                About Relationships
-              </Text>
-            </View>
+            <Text style={{ fontSize: 18, color: "#eeeeee" }}>
+              About Relationships
+            </Text>
           ),
           headerStyle: {
             backgroundColor: "#1b5a67",
           },
           headerTintColor: "#eeeeee", // the back arrow
+          headerRight: () => (
+            <MaterialCommunityIcons
+              name="home"
+              size={24}
+              color="#eeeeee"
+              style={{ marginRight: 20 }}
+              onPress={() => navigation.navigate("HomeScreen")}
+            />
+          ),
         }}
       />
       <Stack.Screen
@@ -136,22 +177,23 @@ export const HomeStack = () => {
         component={PillsScreen}
         options={{
           headerTitle: () => (
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Ionicons
-                name="book"
-                size={20}
-                color="#eeeeee"
-                style={{ marginRight: 10, paddingTop: 3 }}
-              />
-              <Text style={{ marginLeft: 10, fontSize: 18, color: "#eeeeee" }}>
-                Zen Pill Reading
-              </Text>
-            </View>
+            <Text style={{ fontSize: 18, color: "#eeeeee" }}>
+              Zen Pill Reading
+            </Text>
           ),
           headerStyle: {
             backgroundColor: "#1b5a67",
           },
           headerTintColor: "#eeeeee", // the back arrow
+          headerRight: () => (
+            <MaterialCommunityIcons
+              name="home"
+              size={24}
+              color="#eeeeee"
+              style={{ marginRight: 20 }}
+              onPress={() => navigation.navigate("HomeScreen")}
+            />
+          ),
         }}
       />
       <Stack.Screen
@@ -198,6 +240,15 @@ export const HomeStack = () => {
             backgroundColor: "#1b5a67",
           },
           headerTintColor: "#eeeeee", // the back arrow
+          headerRight: () => (
+            <MaterialCommunityIcons
+              name="home"
+              size={24}
+              color="#eeeeee"
+              style={{ marginRight: 20 }}
+              onPress={() => navigation.navigate("HomeScreen")}
+            />
+          ),
         }}
       />
     </Stack.Navigator>

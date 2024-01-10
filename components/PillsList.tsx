@@ -1,13 +1,5 @@
-import {
-  View,
-  FlatList,
-  RefreshControl,
-  ActivityIndicator,
-  StyleSheet,
-  Text,
-} from "react-native";
+import { View, FlatList } from "react-native";
 import PillsItem from "./PillsItem";
-import { useState, useEffect } from "react";
 
 export interface Pill {
   id: string;
@@ -16,6 +8,7 @@ export interface Pill {
   photo: string;
   category: string;
   source: string;
+  read: boolean;
   forScreen?: boolean;
 }
 
@@ -36,6 +29,7 @@ const PillsList = ({ pills, forScreen, handleRefresh, refreshing }: Pills) => {
         photo={item.photo}
         category={item.category}
         source={item.source}
+        read={item.read}
         forScreen
       />
     );

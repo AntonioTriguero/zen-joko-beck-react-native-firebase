@@ -3,21 +3,30 @@ import { Feather } from "@expo/vector-icons";
 import { useState, useEffect } from "react";
 import { pills } from "../data/pillsData";
 import PillsList from "./PillsList";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+import app from "../firebase-database";
 
-export interface Pill {
+const db = getFirestore(app);
+
+interface Pill {
   id: string;
   title: string;
   text: string;
-  photo: string;
   category: string;
+  photo: string;
   source: string;
+  read: boolean;
 }
 
 interface Props {
   topicFilter?: string;
+  onlyRead?: boolean;
 }
 
-const SearchPillsFunctionality = ({ topicFilter }: Props) => {
+const SearchPillsFunctionality = ({ topicFilter, onlyRead }: Props) => {
+  const [pills, setPills] = useState<Pill[]>([]);
+  const [refreshing, setRefreshing] = useState(false);
+
   // Search states
   const [searchText, setSearchText] = useState("");
   const [searchTimeout, setSearchTimeout] = useState<null | NodeJS.Timeout>(
@@ -25,11 +34,49 @@ const SearchPillsFunctionality = ({ topicFilter }: Props) => {
   );
   const [searchedResults, setSearchedResults] = useState<Pill[]>([]);
 
+  // Get data:
+
+  const getPills = async () => {
+    try {
+      const querySnapshot = await getDocs(collection(db, "pills"));
+      const docs = [] as Pill[];
+      querySnapshot.forEach((doc) => {
+        const { title, text, category, photo, source, read } = doc.data();
+        docs.push({
+          id: doc.id,
+          title,
+          text,
+          category,
+          photo,
+          source,
+          read,
+        });
+      });
+      setPills(docs);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getPills();
+  }, []);
+
+  // handle refresh:
+
+  const handleRefresh = () => {
+    setRefreshing(true);
+    getPills();
+    setRefreshing(false);
+  };
+
   // First filter by category:
   let filteredPills: Pill[] = [];
 
   if (topicFilter) {
     filteredPills = pills.filter((pill) => pill.category === topicFilter);
+  } else if (onlyRead) {
+    filteredPills = pills.filter((pill) => pill.read === true);
   } else {
     filteredPills = pills;
   }
@@ -88,9 +135,19 @@ const SearchPillsFunctionality = ({ topicFilter }: Props) => {
 
         <View style={styles.container}>
           {searchText ? (
-            <PillsList pills={searchedResults} forScreen />
+            <PillsList
+              pills={searchedResults}
+              forScreen
+              handleRefresh={handleRefresh}
+              refreshing={refreshing}
+            />
           ) : (
-            <PillsList pills={filteredPills} forScreen />
+            <PillsList
+              pills={filteredPills}
+              forScreen
+              handleRefresh={handleRefresh}
+              refreshing={refreshing}
+            />
           )}
         </View>
       </View>
@@ -116,7 +173,7 @@ const styles = StyleSheet.create({
   searchBox: {
     backgroundColor: "#000000",
     paddingHorizontal: 20,
-    paddingTop: 10,
+    paddingTop: 20,
     paddingBottom: 5,
     justifyContent: "center",
   },
