@@ -22,40 +22,11 @@ export interface Pill {
 interface Pills {
   pills: Pill[];
   forScreen?: boolean;
+  handleRefresh?: () => void;
+  refreshing?: boolean;
 }
 
-const PillsList = ({ pills, forScreen }: Pills) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [refreshing, setRefreshing] = useState(false);
-
-  // refresh effect:
-
-  const handleRefresh = () => {
-    setRefreshing(true);
-    setTimeout(() => {
-      setRefreshing(false);
-    }, 2000);
-  };
-
-  // loading effect:
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
-
-  if (isLoading) {
-    return (
-      <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#eeeeee" />
-      </View>
-    );
-  }
+const PillsList = ({ pills, forScreen, handleRefresh, refreshing }: Pills) => {
   const renderItem = ({ item }: { item: Pill }) => {
     return (
       <PillsItem
@@ -82,14 +53,5 @@ const PillsList = ({ pills, forScreen }: Pills) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  loadingContainer: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 118,
-  },
-});
 
 export default PillsList;

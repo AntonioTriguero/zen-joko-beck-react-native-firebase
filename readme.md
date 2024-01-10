@@ -54,6 +54,10 @@ Youtube videos rendering [library](https://lonelycpp.github.io/react-native-yout
 - `npm install react-native-webview`
 - `npm install react-native-youtube-iframe`
 
+FIREBASE DATABASE:
+
+- `npm install firebase`
+
 ---
 
 Libraries tested:

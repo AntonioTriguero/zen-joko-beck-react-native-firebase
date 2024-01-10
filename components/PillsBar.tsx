@@ -1,12 +1,78 @@
-import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  ActivityIndicator,
+} from "react-native";
 import PillsList from "./PillsList";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import { pills } from "../data/pillsData";
+// import { pills } from "../data/pillsData";
+import { useEffect, useState } from "react";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+import app from "../firebase-database";
+
+const db = getFirestore(app);
+
+interface Pills {
+  id: string;
+  title: string;
+  text: string;
+  category: string;
+  photo: string;
+  source: string;
+}
 
 const PillsBar = () => {
+  const [pills, setPills] = useState<Pills[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
   const navigation = useNavigation<any>();
+
+  const getPills = async () => {
+    try {
+      setIsLoading(true);
+      const querySnapshot = await getDocs(collection(db, "pills"));
+      const docs = [] as Pills[];
+      querySnapshot.forEach((doc) => {
+        const { title, text, category, photo, source } = doc.data();
+        docs.push({
+          id: doc.id,
+          title,
+          text,
+          category,
+          photo,
+          source,
+        });
+      });
+      setPills(docs);
+      setIsLoading(false);
+    } catch (error) {
+      console.log(error);
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getPills();
+  }, []);
+
+  const handleRefresh = () => {
+    setRefreshing(true);
+    getPills();
+    setRefreshing(false);
+  };
+
+  // if (isLoading) {
+  //   return (
+  //     <View style={styles.loadingContainer}>
+  //       <ActivityIndicator size="large" color="#eeeeee" />
+  //     </View>
+  //   );
+  // }
+
   return (
     <>
       <View style={styles.pillsBox}>
@@ -53,7 +119,17 @@ const PillsBar = () => {
 
         {/*<PillsList />*/}
 
-        <PillsList pills={pills} />
+        {isLoading ? (
+          <View style={styles.loadingContainer}>
+            <ActivityIndicator size="large" color="#eeeeee" />
+          </View>
+        ) : (
+          <PillsList
+            pills={pills}
+            handleRefresh={handleRefresh}
+            refreshing={refreshing}
+          />
+        )}
       </View>
     </>
   );
@@ -68,6 +144,12 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     borderColor: "transparent",
     marginTop: -2,
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 118,
   },
 });
 
